@@ -7,7 +7,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SanityTest {
-
+	/**
+	 * @param String T ;
+	 * <code>fff</code>
+	 */
 	@BeforeClass
 	public static void beforeClass() {
 		System.out.println("***Before Class is invoked");
@@ -24,6 +27,7 @@ public class SanityTest {
 		System.out.println("\t After is invoked");
 		System.out.println("=================");
 	}
+
 
 	@Test
 	public void someTest() {
