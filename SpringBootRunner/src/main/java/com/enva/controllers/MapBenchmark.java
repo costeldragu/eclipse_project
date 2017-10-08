@@ -1,10 +1,11 @@
-package com.enva;
+package com.enva.controllers;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
 
+import com.enva.models.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +16,7 @@ public class MapBenchmark {
 	private long elapsedTime;
 	Map<String, Person> list;
 	
-	MapBenchmark() {
+	public MapBenchmark() {
 		list = new HashMap<>();
 		createList(list);
 		forEachEntrySet(list);
@@ -98,7 +99,7 @@ public class MapBenchmark {
 	 */
 	private void iteratorEntrySet(Map<String, Person> list) {
 		startTime();
-		logger.info("Prepear to iteratorEntrySet");
+		logger.info("Prepare to iteratorEntrySet");
 		Iterator<Map.Entry<String, Person>> entries = list.entrySet().iterator();
 		while (entries.hasNext()) {
 			Map.Entry<String, Person> entry = entries.next();
@@ -116,7 +117,7 @@ public class MapBenchmark {
 	 */
 	public void iteratingOverKeys(Map<String, Person> list) {
 		startTime();
-		logger.info("Prepear to iteratingOverKeys");
+		logger.info("Prepare to iteratingOverKeys");
 
 		for (String key : list.keySet()) {
 			Person entry = list.get(key);
@@ -147,7 +148,7 @@ public class MapBenchmark {
 	 */
 	private void showResults() {
 		elapsedTime = stopTime - startTime;
-		logger.info("Executed in " + elapsedTime + " miliseconds");
+		logger.info("Executed in " + elapsedTime + " milliseconds");
 		
 	}
 }

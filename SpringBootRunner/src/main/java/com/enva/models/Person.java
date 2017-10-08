@@ -1,4 +1,4 @@
-package com.enva;
+package com.enva.models;
 
 public class Person {
 

@@ -1,4 +1,4 @@
-package com.enva;
+package com.enva.helpers;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,11 +14,11 @@ public class ArgumentParser {
 	private String lastKeyCheck;
 	private boolean lastKeyCheckResult;
 
-	ArgumentParser() {
+	public ArgumentParser() {
 		mapArgs = new HashMap<>();
 	}
 
-	ArgumentParser(String... args) {
+	public  ArgumentParser(String... args) {
 		this();
 		this.args = args;
 		processArgs();
