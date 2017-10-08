@@ -44,10 +44,11 @@ public class MapBenchmark {
 	/**
 	 * Create the list of elements
 	 * 
-	 * @param list
+	 * @param list -  the list
+	 * @param objNum - number of objects
 	 */
 	private void createList(Map<String, Person> list, int objNum) {
-		logger.info("Prepear to add " + objNum + " of objects");
+		logger.info("Prepare to add " + objNum + " of objects");
 		startTime();
 		Random randomGenerator = new Random();
 		for (int n = 0; n < objNum; ++n) {

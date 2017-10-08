@@ -1,6 +1,7 @@
 package com.enva;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -14,9 +15,11 @@ public class ArgumentParser {
 	private boolean lastKeyCheckResult;
 
 	ArgumentParser() {
+		mapArgs = new HashMap<>();
 	}
 
 	ArgumentParser(String... args) {
+		this();
 		this.args = args;
 		processArgs();
 	}
@@ -29,17 +32,12 @@ public class ArgumentParser {
 				String[] splitArg = arg.split("=");
 				logger.info(Arrays.deepToString(splitArg));
 				if (splitArg.length > 1) {
-					logger.info("0:" + splitArg[0]);
-					logger.info("1:" + splitArg[1]);
 					mapArgs.put(splitArg[0], splitArg[1]);
 				} else if (splitArg.length == 1) {
 					mapArgs.put(splitArg[0], "");
 				}
 			}
 		}
-
-		// TODO Auto-generated method stub
-
 	}
 
 	/**

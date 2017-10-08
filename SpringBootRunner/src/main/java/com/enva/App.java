@@ -27,7 +27,7 @@ public class App implements CommandLineRunner {
 	 * Run the command liner
 	 */
 	public void run(String... args) throws Exception {
-		logger.info("Started appps");
+		logger.info("Started apps");
 		ArgumentParser arguments = new ArgumentParser(args);
 		if (arguments.contain("runClass")) {
 			switch (arguments.getValue("runClass")) {
