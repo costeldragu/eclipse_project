@@ -108,7 +108,6 @@ public class MapBenchmark {
 		endTime();
 		showResults();
 		logger.info("end iteratorEntrySet");
-		
 	}
 
 	/**
@@ -118,7 +117,6 @@ public class MapBenchmark {
 	public void iteratingOverKeys(Map<String, Person> list) {
 		startTime();
 		logger.info("Prepare to iteratingOverKeys");
-
 		for (String key : list.keySet()) {
 			Person entry = list.get(key);
 			entry.setUsername("admin");
@@ -126,7 +124,6 @@ public class MapBenchmark {
 		endTime();
 		showResults();
 		logger.info("end iteratingOverKeys");
-		
 	}
 
 	/**
@@ -149,6 +146,5 @@ public class MapBenchmark {
 	private void showResults() {
 		elapsedTime = stopTime - startTime;
 		logger.info("Executed in " + elapsedTime + " milliseconds");
-		
 	}
 }
