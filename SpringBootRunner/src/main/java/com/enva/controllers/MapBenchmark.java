@@ -14,7 +14,7 @@ public class MapBenchmark {
 	private long startTime;
 	private long stopTime;
 	private long elapsedTime;
-	Map<String, Person> list;
+	private Map<String, Person> list;
 	
 	public MapBenchmark() {
 		list = new HashMap<>();
