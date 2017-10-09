@@ -19,7 +19,6 @@ public class App implements CommandLineRunner {
 	private static final Logger logger = LoggerFactory.getLogger(App.class);
 
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
 		SpringApplication app = new SpringApplication(App.class);
 		app.setBannerMode(Banner.Mode.OFF);
 		app.run(args);
@@ -30,15 +29,26 @@ public class App implements CommandLineRunner {
 	 */
 	public void run(String... args) throws Exception {
 		logger.info("Started apps");
-		ArgumentParser arguments = new ArgumentParser(args);
-		if (arguments.contain("runClass")) {
-			switch (arguments.getValue("runClass")) {
-			case "MapBenchmark":
-				new MapBenchmark();
-				break;
+		if(args.length == 0) {
+			showUsage();
+		}else {
+			ArgumentParser arguments = new ArgumentParser(args);
+			if (arguments.contain("runClass")) {
+				switch (arguments.getValue("runClass")) {
+				case "MapBenchmark":
+					new MapBenchmark();
+					break;
+				}
 			}
 		}
-
 	}
-
+    /**
+     * Show the usage if no parameter was provided
+     */
+	private void showUsage() {
+		System.out.println("***************************************");
+		System.out.println("Spring boot console");
+		System.out.println("***************************************");
+		
+	}
 }
