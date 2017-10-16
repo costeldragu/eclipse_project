@@ -7,6 +7,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @deprecated
+ */
 public class ArgumentParser {
 	private static final Logger logger = LoggerFactory.getLogger(ArgumentParser.class);
 	private String[] args;
