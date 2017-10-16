@@ -28,12 +28,10 @@ public class ArgumentParser {
 	}
 
 	private void processArgs() {
-		logger.info(Arrays.deepToString(args));
 		for (String arg : args) {
 			if (arg.startsWith("--")) {
 				arg = arg.replace("--", "");
 				String[] splitArg = arg.split("=");
-				logger.info(Arrays.deepToString(splitArg));
 				if (splitArg.length > 1) {
 					mapArgs.put(splitArg[0], splitArg[1]);
 				} else if (splitArg.length == 1) {
@@ -77,4 +75,13 @@ public class ArgumentParser {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "ArgumentParser{" +
+				"args=" + Arrays.toString(args) +
+				", mapArgs=" + mapArgs +
+				", lastKeyCheck='" + lastKeyCheck + '\'' +
+				", lastKeyCheckResult=" + lastKeyCheckResult +
+				'}';
+	}
 }

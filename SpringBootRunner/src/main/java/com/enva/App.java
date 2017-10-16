@@ -1,6 +1,7 @@
 package com.enva;
 
 import com.enva.controllers.MapBenchmark;
+import com.enva.controllers.ZipCreator;
 import com.enva.helpers.ArgumentParser;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +17,8 @@ import java.util.Arrays;
 import java.util.Properties;
 import java.util.stream.Stream;
 
+import java.util.Arrays;
+
 /**
  * Hello world!
  */
@@ -26,6 +29,7 @@ public class App implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(App.class);
 		app.setBannerMode(Banner.Mode.OFF);
+
 		app.run(args);
 	}
 
@@ -34,9 +38,8 @@ public class App implements CommandLineRunner {
 	 */
 	public void run(String... args) throws Exception {
 		LOGGER.info("Started apps");
-		String runClass = null;
-		if (ObjectUtils.isEmpty(args)) {
-			LOGGER.error("You have no parameters");
+		String runClass = null;if(ObjectUtils.isEmpty(args)) {
+			LOGGER.error("You have no parameters") ;
 			showUsage();
 			return;
 		}
@@ -50,6 +53,9 @@ public class App implements CommandLineRunner {
 				case "MapBenchmark":
 					new MapBenchmark();
 					break;
+                case "ZipCreator":
+                    new ZipCreator();
+                    break;
 			}
 		}
 	}
@@ -66,6 +72,6 @@ public class App implements CommandLineRunner {
 		LOGGER.info("{}", stars.toString());
 		LOGGER.info("Spring boot console");
 		LOGGER.info("{}", stars.toString());
-
+		
 	}
 }
