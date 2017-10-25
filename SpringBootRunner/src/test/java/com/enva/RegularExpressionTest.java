@@ -1,8 +1,10 @@
 package com.enva;
 
 import com.enva.controllers.RegularExpression;
+import com.enva.controllers.ZipCreator;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +12,11 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 public class RegularExpressionTest {
+
+
+    @Mock
+    ZipCreator zipCreator;
+
 
     RegularExpression regularExpression;
 
